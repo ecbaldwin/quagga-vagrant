@@ -1,0 +1,20 @@
+---
+box: "ubuntu/xenial64"
+multinet_segmentation_id: 2016
+netv4_1: "203.0.113.0/24"
+netv4_2: "198.51.100.0/24"
+routing_ctl: "100.100.100.0/"
+routing_data: "100.100.200.0/"
+netv6_1: "fd7f:3f8d:6dc0:1::/64"
+top:
+  short_name: "top"
+  host_name: "top.devstack.dev"
+  ip: "192.168.34.10"
+  memory: 1536
+  cpus: 2
+tor-r1:
+  short_name: "tor-r1"
+  host_name: "tor-r1.devstack.dev"
+  ip: "192.168.34.21"
+  memory: 1536
+  cpus: 1

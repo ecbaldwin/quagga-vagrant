@@ -18,3 +18,21 @@ tor-r1:
   ip: "192.168.34.21"
   memory: 1536
   cpus: 1
+tor-r2:
+  short_name: "tor-r2"
+  host_name: "tor-r2.devstack.dev"
+  ip: "192.168.34.22"
+  memory: 1536
+  cpus: 1
+vm1:
+  short_name: "vm1"
+  host_name: "vm1.devstack.dev"
+  ip: "192.168.34.41"
+  memory: 512
+  cpus: 1
+vm2:
+  short_name: "vm2"
+  host_name: "vm2.devstack.dev"
+  ip: "192.168.34.42"
+  memory: 512
+  cpus: 1

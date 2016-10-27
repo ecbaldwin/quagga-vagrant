@@ -5,15 +5,21 @@ name=$1; shift
 bash -c 'echo 1 > /proc/sys/net/ipv4/ip_forward'
 bash -c 'echo 1 > /proc/sys/net/ipv6/conf/all/forwarding'
 
+echo "set editing-mode vi" > ~/.inputrc
+echo "set editing-mode vi" > /home/ubuntu/.inputrc
+chown ubuntu: /home/ubuntu/.inputrc
+echo VTYSH_PAGER=less >> /etc/environment
+echo EDITOR=vim >> /etc/environment
+
 apt-get update
-apt-get install quagga -y
+apt-get install -y quagga traceroute
 
 quagga_conf=etc/quagga
 
-for file in daemons zebra.conf bgpd.conf debian.conf
+for file in daemons zebra.conf bgpd.conf debian.conf vtysh.conf
 do
     cp /vagrant/$quagga_conf/$file /$quagga_conf/$file
-    chown quagga: /$quagga_conf/$file
+    chown quagga:quaggavty /$quagga_conf/$file
 done
 
 service quagga restart
